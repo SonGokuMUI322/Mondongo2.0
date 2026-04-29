@@ -1,24 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="estilos.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<body>
     
-<form action="login_proceso.php" method="POST">
+<h1>Lista de elementos</h1>
+<ul id="lista_elementos"></ul>
+<button onclick="openModal();">Añadir elemento</button>
 
-  <h2>Iniciar Sesión</h2>
-  
-  <!-- Campo para el usuario o correo -->
-  <div>
-    <label for="username">Email:</label>
-    <input type="text" id="username" name="email" required>
-  </div>
+<!-- Modal oculto -->
+<dialog id="formModal">
+<h3>Añadir elemento</h3>
+<label for="nuevo_elemento">Nombre</label>
+<input type="text" name="" id="nuevo_elemento">
+<br><br>
+<button onclick="añadirElemento();document.getElementById('nuevo_elemento').value = ''">Añadir</button>
+<button onclick="closeModal();">Cerrar</button>
+</dialog>
+<script>
+	// Muestra el modal
+function openModal(){
+const modal = document.getElementById('formModal');
+modal.showModal();
+}
+	// Oculta el modal
+function closeModal(){
+const modal = document.getElementById('formModal');
+modal.close();
+}
+</script>
+<script>
 
-  <!-- Campo para la contraseña -->
-  <div>
-    <label for="password">password:</label>
-    <input type="password" id="password" name="pass" required>
-  </div>
+    function
+</script>
 
-  <!-- Botón de envío -->
-  <button type="submit">Entrar</button>
-</form>
+<!-- Function añadir elemento -->
+<script>
+function añadirElemento() {
+const elemento = document.getElementById("nuevo_elemento").value;
+if (elemento != "") {
+const lista_elementos = document.getElementById("lista_elementos");
+const li = document.createElement('li');
+li.textContent = elemento;
+lista_elementos.appendChild(li);
+} else {
+alert("Debe ingresar un nombre");
+}
+}
+</script>
+
+    
+</body>
+</html>
